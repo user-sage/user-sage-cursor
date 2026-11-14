@@ -2,7 +2,7 @@
 
 Cursor Marketplace package for the hosted User Sage MCP connector.
 
-Plan, create and run UX research from chat: surveys, tree tests, card sorts, preference tests, first-click tests, five-second tests, and prototype tests. Recruit with Your Panel, AI Panel, or GenPop, and offer Your Panel an incentive, through User Sage's hosted MCP.
+Plan, create, audit and run UX research from chat: surveys, tree tests, card sorts, preference tests, first-click tests, five-second tests, and prototype tests. Recruit with Your Panel, AI Panel, or GenPop, and offer Your Panel an incentive, through User Sage's hosted MCP.
 
 - **MCP URL:** `https://mcp.usersage.com/mcp`
 - **Auth:** Bearer API key (`usg_live_…`) from User Sage → Workspace Settings → Integrations → MCP Connector (any plan)
@@ -51,8 +51,10 @@ Manual MCP (without the plugin):
 2. **The cursor.directory listing does not sync from this repo.** It keeps its own copy of the description, keywords and both components. Open the listing's Edit Plugin form and update it by hand: the Description, the Keywords, and the skill component's Description and Content (copy `skills/user-sage-mcp/SKILL.md` from the line `# User Sage MCP` down, without the `---` header block at the top). The MCP component only changes if `mcp.json` does. Then press Update Plugin.
 3. If the plugin is also listed in the official Cursor Marketplace, re-submit it or bump its version at [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish).
 
-## Tools (server `user-sage`, 20)
+## Tools (server `user-sage`, 20+)
+
+The server gains tools over time, so your client's tool list is the current one and this list can lag it.
 
 Free and Pro: `plan_study`, `list_briefs`
 
-Pro: `list_studies`, `get_study`, `get_study_findings`, `get_study_responses`, `create_study`, `duplicate_study`, `get_recruitment_options`, `start_your_panel_recruitment`, `run_ai_panel`, `launch_genpop_recruitment`, `list_projects`, `get_project`, `list_personas`, `get_persona`, `create_persona`, `list_panels`, `get_panel`, `create_panel`
+Pro: `list_studies`, `get_study`, `get_study_findings`, `get_study_responses`, `audit_study`, `create_study`, `duplicate_study`, `get_recruitment_options`, `start_your_panel_recruitment`, `run_ai_panel`, `launch_genpop_recruitment`, `list_projects`, `get_project`, `list_personas`, `get_persona`, `create_persona`, `list_panels`, `get_panel`, `create_panel`

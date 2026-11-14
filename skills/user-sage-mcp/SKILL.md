@@ -37,6 +37,7 @@ Read (Pro):
 - `get_study`: full config and raw results (large; prefer findings or responses). Also `incentive`: null, or the offer with counts of people Pending, Given and Not given
 - `get_study_findings`: takeaway and aggregates
 - `get_study_responses`: paged individual responses
+- `audit_study`: checks a study before it launches, usually a draft, and lists what to fix: leading or biased questions, unclear questions, screener gaps, method fit, length and structure, and whether each question traces to a research question. Each flag says where it is, why it matters, a ready fix and a severity. Read-only: it never edits, launches, recruits or spends credits. Pass `focus` (`questions`, `screener` or `method`) to check one part.
 - `get_recruitment_options`: which recruitment paths are available for a study, and the incentive types Your Panel can offer (`yourPanel.incentiveTypes`) with the study's current offer
 
 Write and run (Pro):
@@ -59,6 +60,7 @@ Projects, personas and AI panels (Pro):
 - The plan keeps the researcher's own words; everything else is a proposal listed in `assumptions`. Relay the assumptions and do not present a proposed decision, success target or audience as the researcher's.
 - After a plan: on Free, give them `briefUrl` (Create study draft is free in the app) and do not offer to create from chat. On Pro, after they approve, pass the reply's `createStudyInput` to `create_study`.
 - A survey made from a plan may have a placeholder for a screen people look at. If the user gave you the screen, pass it on the survey step as `imageUrl` (a public link) or `imageBase64` (never both): it fills the placeholder. Never invent an image or a link. If you do not have it, or the attach fails, the study is still created: `setupNotes` says "Upload the screen people will see" and `builderUrl` is where to add it. Say so, and do not call the study complete.
+- Offer `audit_study` before the researcher launches or recruits. Lead with its summary, then the `fix_before_launch` flags, each with its fix; offer better wording where you can, but say the researcher applies changes in User Sage (`studyUrl`), since you cannot edit the study. Never invent a problem the audit did not find.
 - Call `get_recruitment_options` before proposing how to recruit.
 - Prefer `get_study_findings` over `get_study` for "what did we learn?"
 - Keep AI Panel results (simulated people, a hypothesis) and real-participant results separate, and say which is which.
