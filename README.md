@@ -50,6 +50,8 @@ Manual MCP (without the plugin):
 1. Merge the change to `main` here and bump `version` in `.cursor-plugin/plugin.json`.
 2. **The cursor.directory listing does not sync from this repo.** It keeps its own copy of the description, keywords and both components. Open the listing's Edit Plugin form and update it by hand: the Description, the Keywords, and the skill component's Description and Content (copy `skills/user-sage-mcp/SKILL.md` from the line `# User Sage MCP` down, without the `---` header block at the top). The MCP component only changes if `mcp.json` does. Then press Update Plugin.
 3. If the plugin is also listed in the official Cursor Marketplace, re-submit it or bump its version at [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish).
+4. When a tool is added or removed, run `pnpm mcp:tools` in `user-sage-backend` and copy its lines into the Tools section below and the tool map in `skills/user-sage-mcp/SKILL.md`. Keep the count at `20+` until the server reaches 25 or 30 tools.
+5. Update the Claude Connectors Directory listing too. It also keeps its own tool list, and your edits go to review while the live listing stays up.
 
 ## Tools (server `user-sage`, 20+)
 
